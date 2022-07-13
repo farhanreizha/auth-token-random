@@ -44,8 +44,10 @@ exports.login = async(req, res) => {
   }
   Users.compare(data, async (result) => {
     try {
+      res.status(200)
       res.json(result)
     } catch (err) {
+      res.status(400)
       console.log(err)
     }
   })

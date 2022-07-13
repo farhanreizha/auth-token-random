@@ -18,8 +18,10 @@ app.use(express.urlencoded({extended: true}))
 app.use('/users', users)
 
 app.get('/', (req, res) => {
-  console.log('required on /')
-  res.send('main endpoint ready! at /')
+  res.status(200)
+  res.json([{
+    message: "Welcome to this Api"
+  }])
 })
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
